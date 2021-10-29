@@ -1,4 +1,4 @@
-package com.example.notakuka.ui.slideshow;
+package com.example.notakuka.ui.notas;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,24 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.notakuka.R;
-import com.example.notakuka.databinding.FragmentSlideshowBinding;
+import com.example.notakuka.databinding.FragmentNotasBinding;
 
-public class SlideshowFragment extends Fragment {
+public class NotasFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
-    private FragmentSlideshowBinding binding;
+    private com.example.notakuka.ui.notas.notasViewModel notasViewModel;
+    private FragmentNotasBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        notasViewModel =
+                new ViewModelProvider(this).get(com.example.notakuka.ui.notas.notasViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentNotasBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textNotas;
+        notasViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

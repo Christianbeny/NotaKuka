@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Tareas {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public int id_tarea;
 
     @ColumnInfo(name = "titulo_tarea")

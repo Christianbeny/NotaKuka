@@ -3,6 +3,7 @@ package com.example.notakuka;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -18,6 +19,8 @@ import com.example.notakuka.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button btn, btnquery;
+
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
@@ -25,7 +28,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        btn= findViewById(R.id.btnQuery2);
+
+        // boton query
+        btnquery=findViewById(R.id.btnquery);
+     //   btnquery.setOnClickListener(view -> {
+          //  AppDataBaseNotas appDataBaseNotas=
+         ////           AppDataBaseNotas.getAppDataBaseNotasInstance(getApplication());
+          //  NotaDao notaDao=appDataBaseNotas.getNotaDao();
+            //  aqui se puede manejar lo que regresa los metodos que se encuentran en la base de datos
+           // AppDataBaseNotas.databaseWriteExecutorNotas.execute(() -> {
+           //     for (Notas notas: notaDao.getAll()){
+                //    Log.d("tabla notas",notas.tituloNota+""+notas.contenidoNota);
+              //  }
+          //  });
+     //   });
+
+     binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
@@ -41,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_inicio, R.id.nav_notas, R.id.nav_tareas)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

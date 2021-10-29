@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Notas {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public int id_nota;
 
     @ColumnInfo(name = "titulo_nota")
