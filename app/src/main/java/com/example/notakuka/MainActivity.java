@@ -19,7 +19,7 @@ import com.example.notakuka.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn, btnquery;
+   Button btnConsulta, btnquery;
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
@@ -28,10 +28,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        btn= findViewById(R.id.btnQuery2);
+      //  btn= findViewById(R.id.btnQuery2);
+
+//boton agregar las notas
+//        btnNotaagr=findViewById(R.id.BtnCrearNota);
+//        btnNotaagr.setOnClickListener(view -> {
+//
+//            AppDataBaseNotas appDataBaseNotas= AppDataBaseNotas.getAppDataBaseNotasInstance(getApplication());
+//
+//
+//
+//         });
+
+
+
+
 
         // boton query
-        btnquery=findViewById(R.id.btnquery);
+        btnquery=findViewById(R.id.BtnconsultaTarea);
      //   btnquery.setOnClickListener(view -> {
           //  AppDataBaseNotas appDataBaseNotas=
          ////           AppDataBaseNotas.getAppDataBaseNotasInstance(getApplication());
@@ -46,6 +60,25 @@ public class MainActivity extends AppCompatActivity {
 
      binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         setSupportActionBar(binding.appBarMain.toolbar);
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
